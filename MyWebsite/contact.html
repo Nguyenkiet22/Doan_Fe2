@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/css/bootstrap.min.css">
+  <script src="public/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="public/css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="public/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="public/css/contact.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Boldonse&family=Monsieur+La+Doulaise&family=New+Rocker&family=Tektur:wght@400..900&display=swap"
+    rel="stylesheet">
+  <title>Nguyễn Tuấn Kiệt - Contact</title>
+</head>
+
+<body >
+
+  <!--nav-->
+  <nav class="navbar">
+
+    <ul class="nav">
+      <li><a href="home.html" style="color: white;" class="active">Home</a></li>
+      <li><a href="ViewAbout.html" style="color: white;">About</a></li>
+      <li><a href="Portfolio.html" style="color: white;">Portfolio</a></li>
+      <li><a href="contact.html" style="color: white; background-color: #038ac4; border-radius: 15px;">Contact</a></li>
+    </ul>
+
+
+  </nav>
+  <!--nav-->
+
+
+  <div class="right" style="float: left; margin-left: 100px;">
+    <h1 class="hello">
+      <span>S</span><span>a</span><span>y</span><span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
+    </h1>
+    <div class="sdt-email">
+      <h6><i class="fa-solid fa-envelope " style="margin-right: 10px;"></i> kietnguyen97124@gmail.com</h6>
+      <h6><i class="fa-solid fa-phone" style="margin-right: 10px;"></i> 0354434722</h6>
+    </div>
+    <ul class="ul-icon">
+      <li><a href="https://www.facebook.com/profile.php?id=100064434914040" target="_blank"><i
+            class="fa-brands fa-facebook" style="color: #13a7b1;"></i></a></li>
+      <li><a href="https://github.com/Nguyenkiet22" target="_blank"><i style="color: #13a7b1;"
+            class="fa-brands fa-github"></i></a></li>
+      <li><a href="https://www.instagram.com/kietnguyen97124/" target="_blank"><i style="color: #13a7b1;"
+            class="fa-brands fa-square-instagram"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/ki%E1%BB%87t-nguy%E1%BB%85n-72b258264/" target="_blank"><i
+            style="color: #13a7b1;" class="fa-brands fa-linkedin"></i></a>
+      </li>
+      <li><a href="" target="_blank"><i style="color: #13a7b1;" class="fa-brands fa-zalo"></i></a></li>
+    </ul>
+    <button class="btn-home">
+      <a href="home.html"> Home </a>
+    </button>
+  </div>
+
+  <div class="contact-container" style="float: right; margin-right: 60px;">
+    <!-- <h1 style="color: black;" ></h1> -->
+    <form id="contactForm" action="mailto:your-email@example.com" method="POST" enctype="multipart/form-data">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">My mail address is::</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="8" required></textarea>
+
+      <button type="submit" class="button-mes">
+        Send
+      </button>
+    </form>
+  </div>
+  </div>
+
+  <!-- Popup sau khi gửi thành công -->
+  <div id="successPopup" class="popup">
+    <div class="popup-content">
+      <h3>✅
+        Submitted successfully!
+      </h3>
+      <p>
+        Thank you for contacting us. We will respond as soon as possible.</p>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
+  <!-- <script src="public/js/contact.js"></script> -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("DyucYtdIKVlIxSKpv"); // thay bằng public key thật
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      emailjs.sendForm("service_5b961md", "template_rxe5ba4", this)
+        .then(function () {
+          document.getElementById("successPopup").classList.add("show");
+          document.getElementById("contactForm").reset();
+        }, function (error) {
+          alert("Gửi thất bại vui lòng xem lại thông tin");
+        });
+    });
+
+    function closePopup() {
+      document.getElementById("successPopup").classList.remove("show");
+    }
+  </script>
+</body>
+
+</html>

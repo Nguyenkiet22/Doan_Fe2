@@ -1,0 +1,347 @@
+body {
+  min-height: 200vh;
+
+}
+
+.about-box {
+  width: 80%;
+  position: relative;
+  top: 5px;
+  left: 10%;
+  margin-bottom: 70px;
+  color: rgb(253, 248, 248);
+  border: 1px solid rgb(11, 243, 231);
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+  display: flex;
+  height: 530px;
+  padding: 20px;
+  border-radius: 15px;
+  gap: 10px;
+}
+
+
+.avatar-about {
+  top: 30px;
+  left: 100px;
+  margin-right: 230px;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  text-align: center;
+  /* box-shadow: 0 0 25px #060606, 0 0 45px #dff0f1, 0 0 70px #c2dcde; */
+  animation: moveAvatar 2s ease-in-out infinite, avatar-Oparacity 1s forwards;
+  animation-delay: moveAvatar 1s;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+@keyframes avatar-Oparacity {
+  0%{
+    opacity: 0;
+    scale: 0;
+  }
+  100%{
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+
+@keyframes moveAvatar {
+  0%, 100% {
+    box-shadow:
+      0 0 15px #00f0ff,
+      0 0 30px #00f0ff,
+      0 0 45px #00f0ff;
+  }
+
+  50% {
+    box-shadow:
+      0 0 45px #48cbf3,
+      0 0 60px #211ef5,
+      0 0 75px #0ff1d6;
+  }
+}
+
+.bio {
+  position: relative;
+  width: 50%;
+  right: 60px;
+  top: 60px;
+}
+
+.hear {
+  top: 10px;
+  left: 30px;
+  position: absolute;
+
+}
+
+
+.skills {
+
+  position: relative;
+  width: 70%;
+  left: 15%;
+  margin: 30px 30px;
+  transition: .2s;
+}
+
+.skill:hover {
+  transform: translateY(-10px);
+  scale: .8;
+}
+
+.skill-list {
+  position: relative;
+  left: 40px;
+  top: 10px;
+
+}
+
+.skill-top {
+  position: relative;
+  top: 5px;
+  display: flex;
+  padding: 30px 0;
+
+
+}
+
+.skill-bot {
+  position: relative;
+  display: flex;
+
+}
+
+.skill {
+  border: 1px solid rgb(253, 253, 253);
+  border-radius: 10px;
+  height: 80px;
+  width: 250px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 30px;
+  margin: 10px 10px;
+  transition: .5s;
+}
+
+.skill:hover {
+  background-color: #00f0ff;
+  color: #0e0f0f;
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+}
+
+span {
+  font-size: 18px;
+}
+
+/* tab */
+.tabs {
+  top: 50px;
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+#tab-skills:checked+label[for="tab-skills"],
+#tab-tools:checked+label[for="tab-tools"] {
+  background-color: #04a8c5;
+  box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff, 0 0 60px #00f0ff;
+  color: white;
+  transform: scale(1);
+  /* hiệu ứng phóng to nhẹ */
+  box-shadow: 0 4px 25px rgba(0, 140, 255, 0.3);
+
+}
+
+
+/* Label như nút tab */
+.tabs label {
+  display: inline-block;
+  padding: 12px 30px;
+  margin-right: 4px;
+  border-radius: 10px 10px 0 0;
+  font-weight: 500;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-size: 23px;
+  margin-right: 5px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  padding: auto;
+  border: 2px solid #0b0b0b;
+  border-radius: 15px;
+}
+
+/* Khi được chọn */
+.tabs input:checked+label {
+  background-color: #4e91f9;
+  color: black;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Nội dung của từng tab */
+.tab-content {
+  display: none;
+
+  padding: 30px;
+  border: 2px solid #fbfbfa;
+  border-top: none;
+  animation: fadeIn 0.8s ease;
+  border-radius: 10px 10px 10px 10px;
+
+}
+
+/* Hiện nội dung khi radio được chọn */
+#tab-skills:checked~#content-skills,
+#tab-tools:checked~#content-tools {
+  display: block;
+}
+
+/* Hiệu ứng fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* icon */
+.icon {
+  transition: .2s;
+}
+
+.icon:hover {
+  transform: translateY(-15px);
+}
+
+
+
+.bio1,
+.bio2,
+.bio3 {
+  opacity: 0;
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+  /* đảm bảo có khoảng cách giữa các dòng */
+}
+
+.bio1 {
+  animation: boiMove1 0.5s ease-out forwards;
+  animation-delay: 0s;
+  transition: .5s;
+}
+
+
+.bio2 {
+  animation: boiMove2 0.5s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.bio3 {
+  animation: boiMove3 0.5s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes boiMove1 {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes boiMove2 {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes boiMove3 {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* doan giua */
+.intro-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.intro-box {
+  background-color: #0d1b2a;
+  border: 2px solid #00f0ff;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 320px;
+  color: #fff;
+  box-shadow: 0 0 30px #07f3f34d;
+  transition: .2s;
+}
+
+.intro-box:hover {
+  transform: translateY(-10px);
+  scale: 1.05;
+}
+
+.intro-box h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.highlight {
+  color: #ffd700;
+  /* vàng */
+  font-weight: bold;
+}
+
+.intro-box p {
+  font-size: 15px;
+  line-height: 1.6;
+}
